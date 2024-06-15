@@ -17,7 +17,7 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_DISABLE_LOGIN_FORM: "true"
     ports:
-      - "127.0.0.1:3000:3000"
+      - "0.0.0.0:3000:3000"
   postgres:
     image: "postgres:14"
     command: >
@@ -55,9 +55,9 @@ services:
       postgres:
         condition: service_healthy
     ports:
-      - "127.0.0.1:3060:3060"
-      - "127.0.0.1:3061:3061"
-      - "127.0.0.1:3081:3081"
+      - "0.0.0.0:3060:3060"
+      - "0.0.0.0:3061:3061"
+      - "0.0.0.0:3081:3081"
     volumes:
       - mainnet-rocksdb:/db
     expose:
